@@ -13,18 +13,3 @@ npm build
 
 GENERATE_SOURCEMAP=true
 PORT=3030
-REACT_APP_START_LIFE_CMS_API=http://localhost:5235
-
-# related links
-
-https://icon-sets.iconify.design/
-
-# related docs
-
-https://react-query-v3.tanstack.com/overview
-
-https://axios-http.com/docs/intro
-
-https://react-hook-form.com/api
-
-https://en.wikipedia.org/wiki/Facade_pattern
