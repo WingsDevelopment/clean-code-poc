@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { useNavigate, useParams } from 'react-router';
-import DefaultSingleColumnDetailsCard from 'src/backoffice-app-code/components/cards/DefaultSingleColumnDetailsCard';
+import LoadableDetailsHandler from 'src/backoffice-app-code/components/cards/DefaultSingleColumnDetailsCard';
 import DefaultPageWithBreadcrumbs from 'src/backoffice-app-code/components/page/DefaultPageWithBreadcrumbs';
 import { TagRoutes } from 'src/backoffice-app-code/routes/Routes';
 import { useUpdateTag } from '../application/mutations/useUpdateTag';
@@ -47,7 +47,7 @@ const CreateTagPage: React.FC = () => {
       )}
 
       {errorMessage && (
-        <DefaultSingleColumnDetailsCard errorMessage={errorMessage} isLoading={isLoadingTag} />
+        <LoadableDetailsHandler errorMessage={errorMessage} isLoading={isLoadingTag} />
       )}
     </DefaultPageWithBreadcrumbs>
   );

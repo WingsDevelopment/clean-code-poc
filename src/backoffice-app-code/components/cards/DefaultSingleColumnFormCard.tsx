@@ -12,7 +12,7 @@ interface Props {
   isSubmitting: boolean;
 }
 
-const DefaultSingleColumnFormCard: React.FC<Props> = ({
+const RHFSingleColumnFormCard: React.FC<Props> = ({
   children,
   methods,
   onSubmit,
@@ -31,4 +31,6 @@ const DefaultSingleColumnFormCard: React.FC<Props> = ({
     </Grid>
   );
 };
-export default DefaultSingleColumnFormCard;
+// todo napraviti myformprovider
+
+export default RHFSingleColumnFormCard;

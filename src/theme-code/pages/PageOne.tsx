@@ -1,6 +1,6 @@
 import DefaultPageWithBreadcrumbs from 'src/backoffice-app-code/components/page/DefaultPageWithBreadcrumbs';
 import { Button } from '@mui/material';
-import DefaultSingleColumnFormCard from 'src/backoffice-app-code/components/cards/DefaultSingleColumnFormCard';
+import RHFSingleColumnFormCard from 'src/backoffice-app-code/components/cards/DefaultSingleColumnFormCard';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import RHFEditor from 'src/backoffice-app-code/components/react-hook-form/RHFEditor';
 import { RHFSingleImageUpload } from 'src/backoffice-app-code/components/react-hook-form/RHFSingleImageUpload';
@@ -58,7 +58,7 @@ export default function PageOne() {
       links={[{ name: 'Page One', href: '/page-one' }]}
       breadcrumbsAction={<Button variant="contained">test</Button>}
     >
-      <DefaultSingleColumnFormCard
+      <RHFSingleColumnFormCard
         methods={methods}
         onSubmit={handleSubmit(onEditorSubmit)}
         isSubmitting={false}
@@ -79,7 +79,7 @@ export default function PageOne() {
 
         <RHFSingleImageUpload name="cover" label="Upload" setValue={setValue} />
         <RHFEditor name="content" label="Content" />
-      </DefaultSingleColumnFormCard>
+      </RHFSingleColumnFormCard>
     </DefaultPageWithBreadcrumbs>
   );
 }

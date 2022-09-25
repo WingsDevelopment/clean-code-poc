@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router';
 import RedirectButtonWithUpdateIcon from 'src/backoffice-app-code/components/buttons/RedirectButtonWithUpdateIcon';
-import DefaultSingleColumnDetailsCard from 'src/backoffice-app-code/components/cards/DefaultSingleColumnDetailsCard';
+import LoadableDetailsHandler from 'src/backoffice-app-code/components/cards/DefaultSingleColumnDetailsCard';
 import DefaultReadOnlyTextField from 'src/backoffice-app-code/components/inputs/DefaultReadOnlyTextField';
 import DefaultReadOnlyTextFieldMultilane from 'src/backoffice-app-code/components/inputs/DefaultReadOnlyTextFieldMultilane';
 import DefaultPageWithBreadcrumbs from 'src/backoffice-app-code/components/page/DefaultPageWithBreadcrumbs';
@@ -33,7 +33,7 @@ const CreateTagPage: React.FC = () => {
         <RedirectButtonWithUpdateIcon label="Izmeni tag" route={TagRoutes.update + '/' + id} />
       }
     >
-      <DefaultSingleColumnDetailsCard errorMessage={errorMessage} isLoading={isLoadingTag}>
+      <LoadableDetailsHandler errorMessage={errorMessage} isLoading={isLoadingTag}>
         <DefaultReadOnlyTextField label="Naziv" value={tag?.title} />
         <DefaultReadOnlyTextField
           label="orderInCarouselHomePage"
@@ -44,7 +44,7 @@ const CreateTagPage: React.FC = () => {
         <DefaultReadOnlyTextField label="Ažuriran" value={tag?.updatedAt?.toString()} />
         <DefaultReadOnlyTextField label="Url slug" value={tag?.urlSlug} />
         <DefaultReadOnlyTextFieldMultilane label="Opis" value={tag?.description} />
-      </DefaultSingleColumnDetailsCard>
+      </LoadableDetailsHandler>
     </DefaultPageWithBreadcrumbs>
   );
 };

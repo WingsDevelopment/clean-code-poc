@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import DefaultSingleColumnFormCard from 'src/backoffice-app-code/components/cards/DefaultSingleColumnFormCard';
+import RHFSingleColumnFormCard from 'src/backoffice-app-code/components/cards/DefaultSingleColumnFormCard';
 import { RHFTextField } from 'src/backoffice-app-code/components/react-hook-form';
 import RHFTextFieldMultiline from 'src/backoffice-app-code/components/react-hook-form/RHFTextFieldMultiline';
 import { REQUIRED_FIELD_ERROR_MESSAGE } from 'src/backoffice-app-code/utils/staticData';
@@ -27,7 +27,7 @@ export const TagForm: React.FC<Props> = ({ isLoading, submitHandler, initialData
   }, [initialData, reset]);
 
   return (
-    <DefaultSingleColumnFormCard
+    <RHFSingleColumnFormCard
       methods={methods}
       onSubmit={handleSubmit(onSubmit)}
       isSubmitting={isLoading}
@@ -38,9 +38,8 @@ export const TagForm: React.FC<Props> = ({ isLoading, submitHandler, initialData
         label={'Naziv'}
       />
       <RHFTextField name="urlSlug" label={'Url slug'} />
-      {/* todo: prevesti OrderInCarouselHomePage i proveriti da li treba uopste */}
       <RHFTextField name="orderInCarouselHomePage" label={'OrderInCarouselHomePage'} />
       <RHFTextFieldMultiline name="description" label={'opis'} />
-    </DefaultSingleColumnFormCard>
+    </RHFSingleColumnFormCard>
   );
 };

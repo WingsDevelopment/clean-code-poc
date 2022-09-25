@@ -9,7 +9,12 @@ interface Props {
   errorMessage?: string | undefined;
 }
 
-const DefaultSingleColumnDetailsCard: React.FC<Props> = ({ children, isLoading, errorMessage }) => {
+//
+const LoadableDetailsHandler: React.FC<Props> = ({ children, isLoading, errorMessage }) => {
+  //error card
+  //if loading return loading card
+  //if error return error card
+  //if no error and no loading return children <- (layout + data)
   if (isLoading || errorMessage) {
     return (
       <Grid container spacing={3}>
@@ -25,7 +30,9 @@ const DefaultSingleColumnDetailsCard: React.FC<Props> = ({ children, isLoading, 
     );
   }
 
+  //loadable card
   return (
+    //details layout card
     <Grid container spacing={3}>
       <DefaultCard>
         <DefaultSingleColumnBox>{children}</DefaultSingleColumnBox>
@@ -34,4 +41,20 @@ const DefaultSingleColumnDetailsCard: React.FC<Props> = ({ children, isLoading, 
   );
 };
 
-export default DefaultSingleColumnDetailsCard;
+export const DetailsLayoutCard: React.FC = ({ children }) => (
+  <Grid container spacing={3}>
+    <DefaultCard>
+      <DefaultSingleColumnBox>{children}</DefaultSingleColumnBox>
+    </DefaultCard>
+  </Grid>
+);
+
+export const neskiUseCase = () => {
+  return (
+    <LoadableDetailsHandler>
+      <DetailsLayoutCard>polje1 polje2</DetailsLayoutCard>
+    </LoadableDetailsHandler>
+  );
+};
+
+export default LoadableDetailsHandler;
