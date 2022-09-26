@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import { TLink } from '../headerBreadcrumbs/Breadcrumbs';
 import HeaderBreadcrumbs from '../headerBreadcrumbs/HeaderBreadcrumbs';
 import DefaultPage from '../page/DefaultPage';
