@@ -1,5 +1,5 @@
 import React from 'react';
-import DefaultPageWithBreadcrumbs from 'src/backoffice-app-code/components/page/DefaultPageWithBreadcrumbs';
+import PageWithBreadcrumbsLayout from 'src/backoffice-app-code/components/layouts/PageWithBreadcrumbsLayout';
 import { TagRoutes } from 'src/backoffice-app-code/routes/Routes';
 
 import { useFetchAllTags } from '../application/queries/useFetchAllTags';
@@ -10,7 +10,7 @@ import { IS_DEV_MODE } from 'src/backoffice-app-code/configs/appConfig';
 const TagsPage: React.FC = () => {
   const { data: tags, isLoading, errorMessage } = useFetchAllTags();
   return (
-    <DefaultPageWithBreadcrumbs
+    <PageWithBreadcrumbsLayout
       title="Tagovi"
       links={[
         {
@@ -23,7 +23,7 @@ const TagsPage: React.FC = () => {
     >
       {IS_DEV_MODE && <SomeDevMessage />}
       <TagTableContainer tags={tags} isLoading={isLoading} errorMessage={errorMessage} />
-    </DefaultPageWithBreadcrumbs>
+    </PageWithBreadcrumbsLayout>
   );
 };
 

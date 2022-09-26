@@ -1,7 +1,7 @@
-import { useMutation, useQuery } from 'react-query';
+import { useMutation } from 'react-query';
 import { NotificationAdapter } from 'src/backoffice-app-code/externalServices/adapters/NotificationServiceAdapter';
-import { FETCH_LOGIN } from 'src/backoffice-app-code/libs/reactQuery/configs/reactQueryCashKeys';
 import { useDefaultRQConfig } from 'src/backoffice-app-code/libs/reactQuery/hooks/reactQueryBase';
+import { FETCH_LOGIN } from 'src/backoffice-app-code/libs/reactQuery/reactQueryCashKeys';
 import { getServerErrorMessage } from 'src/backoffice-app-code/utils/errorUtils';
 import { UserDTO, userExtension } from '../../infrastracture/DTOs/UserDTO';
 import { AuthRepository } from '../../infrastracture/repositories/AuthRepository';

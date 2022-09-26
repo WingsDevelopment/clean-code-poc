@@ -1,7 +1,7 @@
 import { useQuery, useQueryClient } from 'react-query';
-import { FETCH_USER } from 'src/backoffice-app-code/libs/reactQuery/configs/reactQueryCashKeys';
 import { staticDataDefaultRQConfig } from 'src/backoffice-app-code/libs/reactQuery/configs/reactQueryConfigs';
 import { useDefaultRQConfig } from 'src/backoffice-app-code/libs/reactQuery/hooks/reactQueryBase';
+import { FETCH_USER } from 'src/backoffice-app-code/libs/reactQuery/reactQueryCashKeys';
 import { getServerErrorMessage } from 'src/backoffice-app-code/utils/errorUtils';
 import { UserDTO, userExtension } from '../../infrastracture/DTOs/UserDTO';
 

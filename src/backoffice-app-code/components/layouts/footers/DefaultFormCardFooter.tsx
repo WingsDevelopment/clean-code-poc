@@ -6,7 +6,7 @@ interface Props {
   isLoading: boolean;
 }
 
-const DefaultCardFooter: React.FC<Props> = ({ isLoading }) => {
+const DefaultFormCardFooter: React.FC<Props> = ({ isLoading }) => {
   const navigate = useNavigate();
 
   return (
@@ -32,4 +32,4 @@ const DefaultCardFooter: React.FC<Props> = ({ isLoading }) => {
   );
 };
 
-export default DefaultCardFooter;
+export default DefaultFormCardFooter;

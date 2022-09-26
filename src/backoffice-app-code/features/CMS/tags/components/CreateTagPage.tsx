@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { useNavigate } from 'react-router';
-import DefaultPageWithBreadcrumbs from 'src/backoffice-app-code/components/page/DefaultPageWithBreadcrumbs';
+import PageWithBreadcrumbsLayout from 'src/backoffice-app-code/components/layouts/PageWithBreadcrumbsLayout';
 import { TagRoutes } from 'src/backoffice-app-code/routes/Routes';
 import { useCreateNewTag } from '../application/mutations/useCreateNewTag';
 import { createEmptyNewTag, FormTag } from '../models/FormTag';
@@ -22,20 +22,17 @@ const CreateTagPage: React.FC = () => {
   const initialData = useMemo(() => createEmptyNewTag(), []);
 
   return (
-    <DefaultPageWithBreadcrumbs
+    <PageWithBreadcrumbsLayout
       title="Napravi tag"
       links={[
         {
           name: 'Tabela tagova',
           href: TagRoutes.index,
         },
-        {
-          name: 'Napravi tag',
-        },
       ]}
     >
       <TagForm isLoading={isLoading} submitHandler={handleSubmit} initialData={initialData} />
-    </DefaultPageWithBreadcrumbs>
+    </PageWithBreadcrumbsLayout>
   );
 };
 

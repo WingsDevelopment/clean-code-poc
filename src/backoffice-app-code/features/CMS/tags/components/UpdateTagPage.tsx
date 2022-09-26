@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { useNavigate, useParams } from 'react-router';
-import LoadableDetailsHandler from 'src/backoffice-app-code/components/cards/DefaultSingleColumnDetailsCard';
-import DefaultPageWithBreadcrumbs from 'src/backoffice-app-code/components/page/DefaultPageWithBreadcrumbs';
+import { ErrorCard } from 'src/backoffice-app-code/components/cards/ErrorCard';
+import PageWithBreadcrumbsLayout from 'src/backoffice-app-code/components/layouts/PageWithBreadcrumbsLayout';
 import { TagRoutes } from 'src/backoffice-app-code/routes/Routes';
 import { useUpdateTag } from '../application/mutations/useUpdateTag';
 import { useFetchTagById } from '../application/queries/useFetchTagById';
@@ -30,15 +30,12 @@ const CreateTagPage: React.FC = () => {
   const initialData = useMemo(() => (tag ? createUpdateTag(tag) : createEmptyUpdateTag()), [tag]);
 
   return (
-    <DefaultPageWithBreadcrumbs
+    <PageWithBreadcrumbsLayout
       title="Izmeni tag"
       links={[
         {
           name: 'Tabela tagova',
           href: TagRoutes.index,
-        },
-        {
-          name: 'Izmeni tag',
         },
       ]}
     >
@@ -46,10 +43,8 @@ const CreateTagPage: React.FC = () => {
         <TagForm isLoading={isSubmitting} submitHandler={handleSubmit} initialData={initialData} />
       )}
 
-      {errorMessage && (
-        <LoadableDetailsHandler errorMessage={errorMessage} isLoading={isLoadingTag} />
-      )}
-    </DefaultPageWithBreadcrumbs>
+      {errorMessage && <ErrorCard errorMessage={errorMessage} />}
+    </PageWithBreadcrumbsLayout>
   );
 };
 

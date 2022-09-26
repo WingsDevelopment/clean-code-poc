@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import RHFSingleColumnFormCard from 'src/backoffice-app-code/components/cards/DefaultSingleColumnFormCard';
+import DefaultSingleColumnBox from 'src/backoffice-app-code/components/boxs/DefaultSingleColumnBox';
+import MyFormProviderWithCardLayout from 'src/backoffice-app-code/components/formProviders/MyFormWithCardLayout';
 import { RHFTextField } from 'src/backoffice-app-code/components/react-hook-form';
 import RHFTextFieldMultiline from 'src/backoffice-app-code/components/react-hook-form/RHFTextFieldMultiline';
 import { REQUIRED_FIELD_ERROR_MESSAGE } from 'src/backoffice-app-code/utils/staticData';
@@ -27,19 +28,21 @@ export const TagForm: React.FC<Props> = ({ isLoading, submitHandler, initialData
   }, [initialData, reset]);
 
   return (
-    <RHFSingleColumnFormCard
+    <MyFormProviderWithCardLayout
+      isLoading={isLoading}
       methods={methods}
       onSubmit={handleSubmit(onSubmit)}
-      isSubmitting={isLoading}
     >
-      <RHFTextField
-        name="title"
-        rules={{ required: REQUIRED_FIELD_ERROR_MESSAGE }}
-        label={'Naziv'}
-      />
-      <RHFTextField name="urlSlug" label={'Url slug'} />
-      <RHFTextField name="orderInCarouselHomePage" label={'OrderInCarouselHomePage'} />
-      <RHFTextFieldMultiline name="description" label={'opis'} />
-    </RHFSingleColumnFormCard>
+      <DefaultSingleColumnBox>
+        <RHFTextField
+          name="title"
+          rules={{ required: REQUIRED_FIELD_ERROR_MESSAGE }}
+          label={'Naziv'}
+        />
+        <RHFTextField name="urlSlug" label={'Url slug'} />
+        <RHFTextField name="orderInCarouselHomePage" label={'OrderInCarouselHomePage'} />
+        <RHFTextFieldMultiline name="description" label={'opis'} />
+      </DefaultSingleColumnBox>
+    </MyFormProviderWithCardLayout>
   );
 };

@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { TLink } from '../headerBreadcrumbs/Breadcrumbs';
 import HeaderBreadcrumbs from '../headerBreadcrumbs/HeaderBreadcrumbs';
-import DefaultPage from './DefaultPage';
+import DefaultPage from '../page/DefaultPage';
 
 interface Props {
   children: React.ReactNode;
@@ -10,13 +10,13 @@ interface Props {
   breadcrumbsAction?: React.ReactNode;
 }
 
-const DefaultPageWithBreadcrumbs: React.FC<Props> = ({
+const PageWithBreadcrumbsLayout: React.FC<Props> = ({
   children,
   title = '',
   links = [],
   breadcrumbsAction = undefined,
 }) => {
-  const linksWithHome: TLink[] = useMemo(() => [{ name: 'Home', href: '/' }, ...links], [links]);
+  const linksWithHome: TLink[] = [{ name: 'Home', href: '/' }, ...links, { name: title }];
 
   return (
     <DefaultPage title={title}>
@@ -26,4 +26,4 @@ const DefaultPageWithBreadcrumbs: React.FC<Props> = ({
   );
 };
 
-export default DefaultPageWithBreadcrumbs;
+export default PageWithBreadcrumbsLayout;

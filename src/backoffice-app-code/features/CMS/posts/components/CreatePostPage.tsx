@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useNavigate } from 'react-router';
-import DefaultPageWithBreadcrumbs from 'src/backoffice-app-code/components/page/DefaultPageWithBreadcrumbs';
+import PageWithBreadcrumbsLayout from 'src/backoffice-app-code/components/layouts/PageWithBreadcrumbsLayout';
 import { PostsRoutes } from 'src/backoffice-app-code/routes/Routes';
 import { useFetchAllTags } from '../../tags/application/queries/useFetchAllTags';
 import { useCreateNewPost } from '../application/mutations/useCreateNewPost';
@@ -26,7 +26,7 @@ const CreatePostPage: React.FC = () => {
   const initialData = useMemo(() => createEmptyNewPost(), []);
 
   return (
-    <DefaultPageWithBreadcrumbs
+    <PageWithBreadcrumbsLayout
       title="Napravi objavu"
       links={[
         {
@@ -44,7 +44,7 @@ const CreatePostPage: React.FC = () => {
         submitHandler={handleSubmit}
         initialData={initialData}
       />
-    </DefaultPageWithBreadcrumbs>
+    </PageWithBreadcrumbsLayout>
   );
 };
 

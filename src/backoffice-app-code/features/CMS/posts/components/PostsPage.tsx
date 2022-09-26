@@ -1,5 +1,5 @@
 import RedirectButtonWithCreateIcon from 'src/backoffice-app-code/components/buttons/RedirectButtonWithCreateIcon';
-import DefaultPageWithBreadcrumbs from 'src/backoffice-app-code/components/page/DefaultPageWithBreadcrumbs';
+import PageWithBreadcrumbsLayout from 'src/backoffice-app-code/components/layouts/PageWithBreadcrumbsLayout';
 import { PostsRoutes } from 'src/backoffice-app-code/routes/Routes';
 import { useFetchAllPosts } from '../application/queries/useFetchAllPosts';
 
@@ -8,7 +8,7 @@ const PostsPage: React.FC = () => {
 
   console.log(posts);
   return (
-    <DefaultPageWithBreadcrumbs
+    <PageWithBreadcrumbsLayout
       title="Objave"
       links={[
         {
@@ -20,7 +20,7 @@ const PostsPage: React.FC = () => {
       }
     >
       <div>posts</div>
-    </DefaultPageWithBreadcrumbs>
+    </PageWithBreadcrumbsLayout>
   );
 };
 
