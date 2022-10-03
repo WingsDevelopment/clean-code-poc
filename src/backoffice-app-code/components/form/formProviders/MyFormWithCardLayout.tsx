@@ -1,9 +1,9 @@
 import Grid from '@mui/material/Grid';
 import React from 'react';
-import DefaultCard from '../cards/DefaultCard';
+import DefaultCard from '../../cards/DefaultCard';
 import MyFormProvider from './MyFormProvider';
 import { UseFormReturn } from 'react-hook-form';
-import DefaultFormCardFooter from '../layouts/footers/DefaultFormCardFooter';
+import DefaultFormCardFooter from '../../layouts/footers/DefaultFormCardFooter';
 
 interface Props {
   isLoading: boolean;

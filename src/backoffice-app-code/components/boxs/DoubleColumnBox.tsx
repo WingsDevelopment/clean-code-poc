@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 
-const DefaultDoubleColumnBox: React.FC = ({ children }) => (
+const DoubleColumnBox: React.FC = ({ children }) => (
   <Box
     sx={{
       display: 'grid',
@@ -14,4 +14,4 @@ const DefaultDoubleColumnBox: React.FC = ({ children }) => (
   </Box>
 );
 
-export default DefaultDoubleColumnBox;
+export default DoubleColumnBox;

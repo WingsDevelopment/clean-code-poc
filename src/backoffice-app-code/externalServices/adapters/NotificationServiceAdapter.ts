@@ -1,7 +1,10 @@
 import { useEnqueueSnackbar } from '../implementations/SnackBarService';
-import { INotificationAdapter } from '../interfaces/INotificationService';
+import { INotificationService } from '../interfaces/INotificationService';
 
-export const NotificationAdapter = (): INotificationAdapter => ({
+export const SnackbarNotificationService = (): INotificationService => ({
   EnqueueMessage: useEnqueueSnackbar(),
-  // EnqueueMessage: (message, messageType) => window.alert(message),
+});
+
+export const WindowAlertNotificationService = (): INotificationService => ({
+  EnqueueMessage: (message, messageType) => window.alert(message),
 });

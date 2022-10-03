@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router';
-import DefaultDoubleColumnBox from 'src/backoffice-app-code/components/boxs/DefaultDoubleColumnBox';
-import DefaultSingleColumnBox from 'src/backoffice-app-code/components/boxs/DefaultSingleColumnBox';
+import DoubleColumnBox from 'src/backoffice-app-code/components/boxs/DoubleColumnBox';
+import SingleColumnBox from 'src/backoffice-app-code/components/boxs/SingleColumnBox';
 import RedirectButtonWithUpdateIcon from 'src/backoffice-app-code/components/buttons/RedirectButtonWithUpdateIcon';
 import { LoadableCardWrapper } from 'src/backoffice-app-code/components/cards/LoadableCardWrapper';
 import DefaultReadOnlyTextField from 'src/backoffice-app-code/components/inputs/DefaultReadOnlyTextField';
@@ -33,7 +33,7 @@ const CreateTagPage: React.FC = () => {
       }
     >
       <LoadableCardWrapper errorMessage={errorMessage} isLoading={isLoadingTag}>
-        <DefaultSingleColumnBox>
+        <SingleColumnBox>
           <DefaultReadOnlyTextField label="Naziv" value={tag?.title} />
           <DefaultReadOnlyTextField
             label="orderInCarouselHomePage"
@@ -42,10 +42,10 @@ const CreateTagPage: React.FC = () => {
           <DefaultReadOnlyTextField label="Napravljen" value={tag?.createdAt?.toString()} />
           <DefaultReadOnlyTextField label="Ažuriran" value={tag?.updatedAt?.toString()} />
           <DefaultReadOnlyTextField label="Url slug" value={tag?.urlSlug} />
-        </DefaultSingleColumnBox>
-        <DefaultDoubleColumnBox>
+        </SingleColumnBox>
+        <DoubleColumnBox>
           <DefaultReadOnlyTextFieldMultilane label="Opis" value={tag?.description} />
-        </DefaultDoubleColumnBox>
+        </DoubleColumnBox>
       </LoadableCardWrapper>
     </PageWithBreadcrumbsLayout>
   );

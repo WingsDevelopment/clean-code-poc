@@ -10,9 +10,9 @@ import RHFTextFieldMultiline from 'src/backoffice-app-code/components/react-hook
 import { FormPost } from '../models/FormPost';
 import { Tag } from '../../tags/models/Tag';
 import Grid from '@mui/material/Grid';
-import MyFormProvider from 'src/backoffice-app-code/components/formProviders/MyFormProvider';
+import MyFormProvider from 'src/backoffice-app-code/components/form/formProviders/MyFormProvider';
 import DefaultCard from 'src/backoffice-app-code/components/cards/DefaultCard';
-import DefaultSingleColumnBox from 'src/backoffice-app-code/components/boxs/DefaultSingleColumnBox';
+import SingleColumnBox from 'src/backoffice-app-code/components/boxs/SingleColumnBox';
 
 const CATEGORIES = [
   { label: 'Category 1', value: 'category-1' },
@@ -48,18 +48,18 @@ export const PostForm: React.FC<Props> = ({ isLoading, submitHandler, initialDat
       <MyFormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
         <Grid item xs={12} md={8}>
           <DefaultCard>
-            <DefaultSingleColumnBox>
+            <SingleColumnBox>
               <Typography variant="h6">Napravi objavu</Typography>
               <RHFTextField name="title" label="Naziv objave" />
               <RHFEditor name="styledTitle" label="Stilizovan naziv" />
               <RHFEditor name="content" label="Sadrzaj" />
               <RHFSingleImageUpload name="imagePath" label="Slika" setValue={setValue} />
-            </DefaultSingleColumnBox>
+            </SingleColumnBox>
           </DefaultCard>
         </Grid>
         <Grid item xs={12} md={4}>
           <DefaultCard>
-            <DefaultSingleColumnBox>
+            <SingleColumnBox>
               <Typography variant="h6">Dodatni podaci objave</Typography>
 
               <RHFTextFieldMultiline name="description" label="Opis objave" />
@@ -87,7 +87,7 @@ export const PostForm: React.FC<Props> = ({ isLoading, submitHandler, initialDat
               <LoadingButton size="medium" type="submit" variant="contained" loading={isLoading}>
                 Sačuvaj
               </LoadingButton>
-            </DefaultSingleColumnBox>
+            </SingleColumnBox>
           </DefaultCard>
         </Grid>
       </MyFormProvider>

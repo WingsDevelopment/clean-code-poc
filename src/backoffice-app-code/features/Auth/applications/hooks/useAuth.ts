@@ -1,5 +1,5 @@
 import { useMutation } from 'react-query';
-import { NotificationAdapter } from 'src/backoffice-app-code/externalServices/adapters/NotificationServiceAdapter';
+import { SnackbarNotificationService } from 'src/backoffice-app-code/externalServices/adapters/NotificationServiceAdapter';
 import { useDefaultRQConfig } from 'src/backoffice-app-code/libs/reactQuery/hooks/reactQueryBase';
 import { FETCH_LOGIN } from 'src/backoffice-app-code/libs/reactQuery/reactQueryCashKeys';
 import { getServerErrorMessage } from 'src/backoffice-app-code/utils/errorUtils';
@@ -22,7 +22,7 @@ export interface IUseAuth {
 export function useAuth(): IUseAuth {
   const { clearUser, updateUser } = useUser();
   const config = useDefaultRQConfig('useAuth');
-  const { EnqueueMessage } = NotificationAdapter();
+  const { EnqueueMessage } = SnackbarNotificationService();
 
   const {
     mutateAsync: login,

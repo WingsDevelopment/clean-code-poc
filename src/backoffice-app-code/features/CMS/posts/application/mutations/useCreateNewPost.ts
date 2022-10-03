@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from 'react-query';
-import { NotificationAdapter } from 'src/backoffice-app-code/externalServices/adapters/NotificationServiceAdapter';
+import { SnackbarNotificationService } from 'src/backoffice-app-code/externalServices/adapters/NotificationServiceAdapter';
 import { FETCH_ALL_POSTS } from 'src/backoffice-app-code/libs/reactQuery/configs/reactQueryCashKeys';
 import { useDefaultRQConfig } from 'src/backoffice-app-code/libs/reactQuery/hooks/reactQueryBase';
 import { getServerErrorMessage } from 'src/backoffice-app-code/utils/errorUtils';
@@ -8,7 +8,7 @@ import { PostsRepository } from '../../infrastructure/Repositories/PostsReposito
 import { FormPost } from '../../models/FormPost';
 
 export const useCreateNewPost = () => {
-  const { EnqueueMessage } = NotificationAdapter();
+  const { EnqueueMessage } = SnackbarNotificationService();
   const queryClient = useQueryClient();
   const config = useDefaultRQConfig('useCreateNewPost');
 

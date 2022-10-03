@@ -1,11 +1,11 @@
 import { getServerErrorMessage } from 'src/backoffice-app-code/utils/errorUtils';
 import { defaultRQConfig } from '../configs/reactQueryConfigs';
-import { LoggingServiceAdapter } from '../../../externalServices/adapters/LoggingServiceAdapter';
-import { NotificationAdapter } from '../../../externalServices/adapters/NotificationServiceAdapter';
+import { LoggingServiceAdapter } from '../../logging/LoggingServiceAdapter';
+import { SnackbarNotificationService } from '../../../externalServices/adapters/NotificationServiceAdapter';
 
 export const useDefaultRQConfig = (callerName: string) => {
   const { LogError } = LoggingServiceAdapter;
-  const { EnqueueMessage } = NotificationAdapter();
+  const { EnqueueMessage } = SnackbarNotificationService();
 
   return {
     ...defaultRQConfig,

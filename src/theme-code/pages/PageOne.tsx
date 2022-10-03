@@ -7,7 +7,7 @@ import { RHFCheckbox, RHFSwitch } from 'src/backoffice-app-code/components/react
 import RHFSwitchAffiliated from 'src/backoffice-app-code/components/react-hook-form/RHFSwitchAffiliated';
 import { useDataGroupedByKeyValue } from 'src/backoffice-app-code/utils/dataMutationsUtils';
 import { RHFCategorySelect } from 'src/backoffice-app-code/components/react-hook-form/RHFCategorySelect';
-import MyFormWithCardLayout from 'src/backoffice-app-code/components/formProviders/MyFormWithCardLayout';
+import MyFormWithCardLayout from 'src/backoffice-app-code/components/form/formProviders/MyFormWithCardLayout';
 
 // ----------------------------------------------------------------------
 

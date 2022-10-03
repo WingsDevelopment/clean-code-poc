@@ -1,5 +1,5 @@
 export type MessageType = 'default' | 'error' | 'success' | 'warning' | 'info';
 
-export interface INotificationAdapter {
+export interface INotificationService {
   EnqueueMessage: (message: string, messageType: MessageType) => void;
 }
